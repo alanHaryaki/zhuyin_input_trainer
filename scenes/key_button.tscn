@@ -1,0 +1,173 @@
+[gd_scene load_steps=11 format=3 uid="uid://bn8h1f2bbh1a2"]
+
+[ext_resource type="Script" path="res://key_button.gd" id="1_gxr8s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jelgr"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.784314, 0.784314, 0.784314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.821789, 0.821789, 0.821789, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8d5l"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.821789, 0.821789, 0.821789, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csg1x"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.470588, 0.470588, 0.470588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.821789, 0.821789, 0.821789, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psgty"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksw4h"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.129558, 0.129559, 0.129558, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_th0ec"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.252028, 0.252028, 0.252028, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_ti6w5"]
+default_font_size = 64
+KeyButtonBrightMode/base_type = &"Button"
+KeyButtonBrightMode/colors/font_color = Color(0, 0, 0, 1)
+KeyButtonBrightMode/styles/hover = SubResource("StyleBoxFlat_jelgr")
+KeyButtonBrightMode/styles/normal = SubResource("StyleBoxFlat_f8d5l")
+KeyButtonBrightMode/styles/pressed = SubResource("StyleBoxFlat_csg1x")
+KeyButtonDarkMode/base_type = &"Button"
+KeyButtonDarkMode/colors/font_color = Color(1, 1, 1, 1)
+KeyButtonDarkMode/styles/hover = SubResource("StyleBoxFlat_psgty")
+KeyButtonDarkMode/styles/normal = SubResource("StyleBoxFlat_ksw4h")
+KeyButtonDarkMode/styles/pressed = SubResource("StyleBoxFlat_th0ec")
+
+[sub_resource type="LabelSettings" id="LabelSettings_q0eb1"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_ictob"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+
+[node name="KeyButton" type="Button" node_paths=PackedStringArray("pinyin_label", "key_label", "audio_player")]
+modulate = Color(1, 1, 1, 0.988235)
+custom_minimum_size = Vector2(70, 95)
+offset_right = 70.0
+offset_bottom = 95.0
+focus_mode = 0
+mouse_filter = 2
+theme = SubResource("Theme_ti6w5")
+theme_type_variation = &"KeyButtonBrightMode"
+toggle_mode = true
+action_mode = 0
+text = "ㄅ"
+script = ExtResource("1_gxr8s")
+zhuyin = "ㄅ"
+pinyin_label = NodePath("PinyinLabel")
+key_label = NodePath("KeyLabel")
+audio_player = NodePath("AudioStreamPlayer")
+
+[node name="PinyinLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_bottom = 30.0
+grow_horizontal = 0
+text = "
+"
+label_settings = SubResource("LabelSettings_q0eb1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_right = 24.0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_ictob")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://drg2vrr8jntv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b4she"]
+font_size = 36
+
+[node name="ZhuyinLabel" type="Label"]
+custom_minimum_size = Vector2(24, 50)
+label_settings = SubResource("LabelSettings_b4she")
+horizontal_alignment = 1
+vertical_alignment = 2
+clip_text = true

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7b6qkls8euen"]
+
+[ext_resource type="Script" path="res://scenes/character_container.gd" id="1_clebm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_84i6e"]
+font_size = 72
+
+[node name="CharacterContainer" type="VBoxContainer" node_paths=PackedStringArray("zhuyin_container", "character_label")]
+offset_right = 160.0
+offset_bottom = 105.0
+alignment = 2
+script = ExtResource("1_clebm")
+zhuyin_container = NodePath("ZhuyinContainer")
+character_label = NodePath("CharacterLabel")
+
+[node name="ZhuyinContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CharacterLabel" type="Label" parent="."]
+layout_mode = 2
+text = "空"
+label_settings = SubResource("LabelSettings_84i6e")
+horizontal_alignment = 1

@@ -1,0 +1,474 @@
+[gd_scene load_steps=39 format=3 uid="uid://q2dn2or83qcr"]
+
+[ext_resource type="PackedScene" uid="uid://bn8h1f2bbh1a2" path="res://scenes/key_button.tscn" id="1_yb8hr"]
+[ext_resource type="AudioStream" uid="uid://bdsqat7so41we" path="res://assets/b.wav" id="2_0dkmd"]
+[ext_resource type="AudioStream" uid="uid://otnu3mhd77py" path="res://assets/d.wav" id="3_l3lgr"]
+[ext_resource type="AudioStream" uid="uid://blc2c8a506bbx" path="res://assets/zh.wav" id="4_iwxji"]
+[ext_resource type="AudioStream" uid="uid://bm0ilgunsvrdl" path="res://assets/a.wav" id="5_a2ybi"]
+[ext_resource type="AudioStream" uid="uid://boqgyeo2eli5v" path="res://assets/an.wav" id="6_bcie6"]
+[ext_resource type="AudioStream" uid="uid://lbrsqh4pcgnm" path="res://assets/ai.wav" id="6_tn660"]
+[ext_resource type="AudioStream" uid="uid://cajmrwuhp2hm0" path="res://assets/er.wav" id="7_br0gy"]
+[ext_resource type="AudioStream" uid="uid://6ksjobcbw1wh" path="res://assets/p.wav" id="8_2s1eo"]
+[ext_resource type="AudioStream" uid="uid://n362y0u6bpsj" path="res://assets/t.wav" id="9_383fo"]
+[ext_resource type="AudioStream" uid="uid://dugvug71kg5li" path="res://assets/g.wav" id="10_tt5yf"]
+[ext_resource type="AudioStream" uid="uid://fmq04nc6jwig" path="res://assets/j.wav" id="11_ho0ma"]
+[ext_resource type="AudioStream" uid="uid://cavsq3d367axr" path="res://assets/ch.wav" id="12_1sw3a"]
+[ext_resource type="AudioStream" uid="uid://ckpkm43vdywyj" path="res://assets/z.wav" id="13_e4qp4"]
+[ext_resource type="AudioStream" uid="uid://tud2nea1jdel" path="res://assets/i.wav" id="14_rug83"]
+[ext_resource type="AudioStream" uid="uid://drex6rvhi74kd" path="res://assets/o.wav" id="15_hrevl"]
+[ext_resource type="AudioStream" uid="uid://d12al5uqgwqu0" path="res://assets/ei.wav" id="16_y2iek"]
+[ext_resource type="AudioStream" uid="uid://cq31oc3u1jdnr" path="res://assets/en.wav" id="17_2kxd6"]
+[ext_resource type="AudioStream" uid="uid://dqvs3i2tyjvwy" path="res://assets/m.wav" id="18_copmv"]
+[ext_resource type="AudioStream" uid="uid://dv5j1273b85qc" path="res://assets/n.wav" id="19_t703k"]
+[ext_resource type="AudioStream" uid="uid://sfup0sy4k8on" path="res://assets/k.wav" id="20_kskow"]
+[ext_resource type="AudioStream" uid="uid://bojksw2qjghb7" path="res://assets/q.wav" id="21_4po6a"]
+[ext_resource type="AudioStream" uid="uid://b1pmiber1haxx" path="res://assets/sh.wav" id="22_ted4k"]
+[ext_resource type="AudioStream" uid="uid://cgwfrwohkfw5a" path="res://assets/c.wav" id="23_v2bhh"]
+[ext_resource type="AudioStream" uid="uid://bq7pjgupq7gpm" path="res://assets/u.wav" id="24_vgqlf"]
+[ext_resource type="AudioStream" uid="uid://cxqtljw0mej1v" path="res://assets/e.wav" id="25_7ihlk"]
+[ext_resource type="AudioStream" uid="uid://c3j611t6nimd8" path="res://assets/ao.wav" id="26_s286r"]
+[ext_resource type="AudioStream" uid="uid://cm555ake71efw" path="res://assets/ang.wav" id="27_t8tqm"]
+[ext_resource type="AudioStream" uid="uid://b3g2shc3rqsd4" path="res://assets/f.wav" id="28_dlo43"]
+[ext_resource type="AudioStream" uid="uid://cd3vod16oayvm" path="res://assets/l.wav" id="29_3jxke"]
+[ext_resource type="AudioStream" uid="uid://bik1fgkbk3dt2" path="res://assets/h.wav" id="30_4m05n"]
+[ext_resource type="AudioStream" uid="uid://d072klbsn2y04" path="res://assets/x.wav" id="31_dmryc"]
+[ext_resource type="AudioStream" uid="uid://cvpmut7k7q07v" path="res://assets/r.wav" id="32_m2b1j"]
+[ext_resource type="AudioStream" uid="uid://biufa0lk6kfva" path="res://assets/s.wav" id="33_m53kx"]
+[ext_resource type="AudioStream" uid="uid://bmwa4g03wmxyg" path="res://assets/ü.wav" id="34_68wyu"]
+[ext_resource type="AudioStream" uid="uid://b1rv3pxi3q7nl" path="res://assets/ie.wav" id="35_h1rqa"]
+[ext_resource type="AudioStream" uid="uid://cpy8iivs4kaby" path="res://assets/ou.wav" id="36_ijj32"]
+[ext_resource type="AudioStream" uid="uid://c2hi4jhjin56f" path="res://assets/eng.wav" id="37_oyod1"]
+
+[node name="KeyBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FirstRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="KeyButton" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+pinyin = "b"
+key = "1"
+audio_stream = ExtResource("2_0dkmd")
+
+[node name="KeyButton2" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄉ"
+zhuyin = "ㄉ"
+pinyin = "d"
+key = "2"
+audio_stream = ExtResource("3_l3lgr")
+
+[node name="KeyButton3" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ˇ"
+zhuyin = "ˇ"
+category = 3
+key = "3"
+
+[node name="KeyButton4" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ˋ"
+zhuyin = "ˋ"
+category = 3
+key = "4"
+
+[node name="KeyButton5" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄓ"
+zhuyin = "ㄓ"
+pinyin = "zh"
+key = "5"
+audio_stream = ExtResource("4_iwxji")
+
+[node name="KeyButton6" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ˊ"
+zhuyin = "ˊ"
+category = 3
+key = "6"
+
+[node name="KeyButton7" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "˙"
+zhuyin = "˙"
+category = 3
+key = "7"
+
+[node name="KeyButton8" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄚ"
+zhuyin = "ㄚ"
+category = 1
+pinyin = "a"
+key = "8"
+audio_stream = ExtResource("5_a2ybi")
+
+[node name="KeyButton9" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄞ"
+zhuyin = "ㄞ"
+category = 1
+pinyin = "ai"
+key = "9"
+audio_stream = ExtResource("6_tn660")
+
+[node name="KeyButton10" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄢ"
+zhuyin = "ㄢ"
+category = 1
+pinyin = "an"
+key = "0"
+audio_stream = ExtResource("6_bcie6")
+
+[node name="KeyButton11" parent="VBoxContainer/FirstRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄦ"
+zhuyin = "ㄦ"
+category = 1
+pinyin = "er"
+key = "Minus"
+audio_stream = ExtResource("7_br0gy")
+
+[node name="SecondRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="KeyButton" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄆ"
+zhuyin = "ㄆ"
+pinyin = "p"
+key = "Q"
+audio_stream = ExtResource("8_2s1eo")
+
+[node name="KeyButton2" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄊ"
+zhuyin = "ㄊ"
+pinyin = "t"
+key = "W"
+audio_stream = ExtResource("9_383fo")
+
+[node name="KeyButton3" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄍ"
+zhuyin = "ㄍ"
+pinyin = "g"
+key = "E"
+audio_stream = ExtResource("10_tt5yf")
+
+[node name="KeyButton4" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄐ"
+zhuyin = "ㄐ"
+pinyin = "j"
+key = "R"
+audio_stream = ExtResource("11_ho0ma")
+
+[node name="KeyButton5" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄔ"
+zhuyin = "ㄔ"
+pinyin = "ch"
+key = "T"
+audio_stream = ExtResource("12_1sw3a")
+
+[node name="KeyButton6" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄗ"
+zhuyin = "ㄗ"
+pinyin = "z"
+key = "Y"
+audio_stream = ExtResource("13_e4qp4")
+
+[node name="KeyButton7" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄧ"
+zhuyin = "ㄧ"
+category = 2
+pinyin = "i"
+key = "U"
+audio_stream = ExtResource("14_rug83")
+
+[node name="KeyButton8" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄛ"
+zhuyin = "ㄛ"
+category = 1
+pinyin = "o"
+key = "I"
+audio_stream = ExtResource("15_hrevl")
+
+[node name="KeyButton9" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄟ"
+zhuyin = "ㄟ"
+category = 1
+pinyin = "ei"
+key = "O"
+audio_stream = ExtResource("16_y2iek")
+
+[node name="KeyButton10" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄣ"
+zhuyin = "ㄣ"
+category = 1
+pinyin = "en"
+key = "P"
+audio_stream = ExtResource("17_2kxd6")
+
+[node name="ThirdRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlaceHolder" type="Control" parent="VBoxContainer/ThirdRow"]
+custom_minimum_size = Vector2(60, 95)
+layout_mode = 2
+
+[node name="KeyButton" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄇ"
+zhuyin = "ㄇ"
+pinyin = "m"
+key = "A"
+audio_stream = ExtResource("18_copmv")
+
+[node name="KeyButton2" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄋ"
+zhuyin = "ㄋ"
+pinyin = "n"
+key = "S"
+audio_stream = ExtResource("19_t703k")
+
+[node name="KeyButton3" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄎ"
+zhuyin = "ㄎ"
+pinyin = "k"
+key = "D"
+audio_stream = ExtResource("20_kskow")
+
+[node name="KeyButton4" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄑ"
+zhuyin = "ㄑ"
+pinyin = "q"
+key = "F"
+audio_stream = ExtResource("21_4po6a")
+
+[node name="KeyButton5" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄕ"
+zhuyin = "ㄕ"
+pinyin = "sh"
+key = "G"
+audio_stream = ExtResource("22_ted4k")
+
+[node name="KeyButton6" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄘ"
+zhuyin = "ㄘ"
+pinyin = "c"
+key = "H"
+audio_stream = ExtResource("23_v2bhh")
+
+[node name="KeyButton7" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄨ"
+zhuyin = "ㄨ"
+category = 2
+pinyin = "u"
+key = "J"
+audio_stream = ExtResource("24_vgqlf")
+
+[node name="KeyButton8" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄜ"
+zhuyin = "ㄜ"
+category = 1
+pinyin = "e"
+key = "K"
+audio_stream = ExtResource("25_7ihlk")
+
+[node name="KeyButton9" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄠ"
+zhuyin = "ㄠ"
+category = 1
+pinyin = "ao"
+key = "L"
+audio_stream = ExtResource("26_s286r")
+
+[node name="KeyButton10" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄤ"
+zhuyin = "ㄤ"
+category = 1
+pinyin = "ang"
+key = "Semicolon"
+audio_stream = ExtResource("27_t8tqm")
+
+[node name="FourthRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlaceHolder" type="Control" parent="VBoxContainer/FourthRow"]
+custom_minimum_size = Vector2(135, 95)
+layout_mode = 2
+
+[node name="KeyButton" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄈ"
+zhuyin = "ㄈ"
+pinyin = "f"
+key = "Z"
+audio_stream = ExtResource("28_dlo43")
+
+[node name="KeyButton2" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄌ"
+zhuyin = "ㄌ"
+pinyin = "l"
+key = "X"
+audio_stream = ExtResource("29_3jxke")
+
+[node name="KeyButton3" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄏ"
+zhuyin = "ㄏ"
+pinyin = "h"
+key = "C"
+audio_stream = ExtResource("30_4m05n")
+
+[node name="KeyButton4" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄒ"
+zhuyin = "ㄒ"
+pinyin = "x"
+key = "V"
+audio_stream = ExtResource("31_dmryc")
+
+[node name="KeyButton5" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄖ"
+zhuyin = "ㄖ"
+pinyin = "r"
+key = "B"
+audio_stream = ExtResource("32_m2b1j")
+
+[node name="KeyButton6" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄙ"
+zhuyin = "ㄙ"
+pinyin = "s"
+key = "N"
+audio_stream = ExtResource("33_m53kx")
+
+[node name="KeyButton7" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄩ"
+zhuyin = "ㄩ"
+category = 2
+pinyin = "ü"
+key = "M"
+audio_stream = ExtResource("34_68wyu")
+
+[node name="KeyButton8" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄝ"
+zhuyin = "ㄝ"
+category = 1
+pinyin = "ie"
+key = "Comma"
+audio_stream = ExtResource("35_h1rqa")
+
+[node name="KeyButton9" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄡ"
+zhuyin = "ㄡ"
+category = 1
+pinyin = "ou"
+key = "Period"
+audio_stream = ExtResource("36_ijj32")
+
+[node name="KeyButton10" parent="VBoxContainer/FourthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+text = "ㄥ"
+zhuyin = "ㄥ"
+category = 1
+pinyin = "eng"
+key = "Slash"
+audio_stream = ExtResource("37_oyod1")
+
+[node name="FifthRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="KeyButton" parent="VBoxContainer/FifthRow" instance=ExtResource("1_yb8hr")]
+modulate = Color(1, 1, 1, 1)
+custom_minimum_size = Vector2(350, 95)
+layout_mode = 2
+text = " "
+zhuyin = " "
+category = 3
+key = "Space"

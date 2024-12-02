@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c2nca3pkaqewr"
+
+[deps]
+
+files=["res://resources/character_zhuyin_dictionary.zhuyin.translation", "res://resources/character_zhuyin_dictionary.alt.translation"]
+
+source_file="res://resources/character_zhuyin_dictionary.csv"
+dest_files=["res://resources/character_zhuyin_dictionary.zhuyin.translation", "res://resources/character_zhuyin_dictionary.alt.translation"]
+
+[params]
+
+compress=true
+delimiter=0

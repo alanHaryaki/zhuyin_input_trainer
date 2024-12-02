@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg6f3sqq4b8n0"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ncj2t"]
+[ext_resource type="PackedScene" uid="uid://q2dn2or83qcr" path="res://scenes/key_board.tscn" id="2_gpoor"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncj2t")
+
+[node name="KeyBoard" parent="." instance=ExtResource("2_gpoor")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -151.0
+offset_top = 17.0
+offset_right = -15.0
+offset_bottom = 119.0
+grow_horizontal = 0
+text = "F1：亮色
+F2：暗色
+F3：按類別著色
+F4：顯示/隱藏拼音"
