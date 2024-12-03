@@ -10,12 +10,16 @@ var show_pinyin: bool = false:
 var show_key: bool = false:
 	set = set_global_key_visibility
 
+var sound_effects_enabled: bool = true
+
 
 var current_text_index: int = 0
 var current_string: String = ""
 var current_character_index: int = 0
 
 @onready var positive_notification: AudioStreamPlayer = $PositiveNotification
+@onready var neutral_notification: AudioStreamPlayer = $NeutralNotification
+
 
 
 func _ready() -> void:
@@ -42,9 +46,12 @@ func _input(event: InputEvent) -> void:
 			show_pinyin = not show_pinyin
 		elif keycode_string == "F5":
 			show_key = not show_key
+		elif keycode_string == "F6":
+			sound_effects_enabled = not sound_effects_enabled
 		else:
-			pass
-			#highlight_key(keycode_string)
+			return
+		
+		neutral_notification.play()
 
 
 func display_text(text_index: int) -> void:
@@ -79,7 +86,8 @@ func check_input() -> void:
 	
 	if Global.character_zhuyin_dictionary[Global.texts[current_text_index][current_character_index]].any(func(zhuyin): return zhuyin in current_string):
 		
-		positive_notification.play()
+		if sound_effects_enabled:
+			positive_notification.play()
 		
 		current_string = ""
 
