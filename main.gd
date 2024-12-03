@@ -13,12 +13,17 @@ var show_key: bool = false:
 var sound_effects_enabled: bool = true
 
 
-var current_text_index: int = 0
 var current_string: String = ""
+var current_section_index: int = 0 # Currently not in use. Saved for future use.
+var current_text_index: int = 0
+var current_sentence_index: int = 0
 var current_character_index: int = 0
 
 @onready var positive_notification: AudioStreamPlayer = $PositiveNotification
 @onready var neutral_notification: AudioStreamPlayer = $NeutralNotification
+@onready var author_label: Label = $InfoContainer/AuthorLabel
+@onready var title_label: Label = $InfoContainer/TitleLabel
+@onready var note_label: Label = $InfoContainer/NoteLabel
 
 
 
@@ -28,7 +33,7 @@ func _ready() -> void:
 	
 	Global.load_data()
 	
-	display_text(current_text_index)
+	display_text(current_text_index, current_sentence_index)
 	
 
 func _input(event: InputEvent) -> void:
@@ -48,19 +53,32 @@ func _input(event: InputEvent) -> void:
 			show_key = not show_key
 		elif keycode_string == "F6":
 			sound_effects_enabled = not sound_effects_enabled
+		elif keycode_string == "F7":
+			current_sentence_index = 0
+			current_text_index = randi() % Global.texts.size()
+			
+			display_text(current_text_index, current_sentence_index)
+			
 		else:
 			return
 		
 		neutral_notification.play()
 
 
-func display_text(text_index: int) -> void:
+func display_text(text_index: int, sentence_index: int) -> void:
 	for child: Control in text_container.get_children():
 		child.queue_free()
-	var text: String = Global.texts[text_index]
-	for character: String in text.split():
+	var text: String = Global.texts[text_index]["sentences"][sentence_index]["text"]
+	var note: String = Global.texts[text_index]["sentences"][sentence_index]["note"] if Global.texts[text_index]["sentences"][sentence_index].has("note") else ""
+	title_label.text = Global.texts[text_index]["info"]["title"]
+	author_label.text = Global.texts[text_index]["info"]["author"]
+	note_label.text = note
+	var spelling_overrides: Dictionary = Global.texts[text_index]["sentences"][sentence_index]["spelling_overrides"] \
+		if Global.texts[text_index]["sentences"][sentence_index].has("spelling_overrides") else {}
+	for i: int in text.length():
 		var character_container: CharacterContainer = CHARACTER_CONTAINER.instantiate()
-		character_container.initiate(character)
+		var spelling_override: String = "" if not spelling_overrides or not spelling_overrides.has(str(i)) else spelling_overrides[str(i)]
+		character_container.initiate(text[i], spelling_override)
 		text_container.add_child(character_container)
 
 
@@ -76,34 +94,43 @@ func on_button_matched(button: KeyButton) -> void:
 func check_input() -> void:
 	for child in text_container.get_children()[current_character_index].zhuyin_container.get_children():
 		child.modulate = Color.WHITE
-	for i: int in range(min(Global.character_zhuyin_dictionary[Global.texts[current_text_index][current_character_index]][0].length(), current_string.length()), 0, -1):
+	
+	var current_character_container: CharacterContainer = text_container.get_children()[current_character_index]
+	
+	var correct_spelling: String = current_character_container.spelling
+	
+	for i: int in range(min(correct_spelling.length(), current_string.length()), 0, -1):
 		
-		print("Comparing ", current_string.right(i), " and ", Global.character_zhuyin_dictionary[Global.texts[current_text_index][current_character_index]][0].left(i))
-		if current_string.right(i) == Global.character_zhuyin_dictionary[Global.texts[current_text_index][current_character_index]][0].left(i):
+		print("Comparing ", current_string.right(i), " and ", correct_spelling.left(i))
+		
+		if current_string.right(i) == correct_spelling.left(i):
 			for index: int in range(i):
-				text_container.get_children()[current_character_index].zhuyin_container.get_children()[index].modulate = Color.SEA_GREEN
+				current_character_container.zhuyin_container.get_children()[index].modulate = Color.SEA_GREEN
 			break
 	
-	if Global.character_zhuyin_dictionary[Global.texts[current_text_index][current_character_index]].any(func(zhuyin): return zhuyin in current_string):
+	if correct_spelling in current_string:
 		
 		if sound_effects_enabled:
 			positive_notification.play()
 		
 		current_string = ""
 
-		for child in text_container.get_children()[current_character_index].zhuyin_container.get_children():
+		for child in current_character_container.zhuyin_container.get_children():
 			child.modulate = Color.WHITE
 		
-		text_container.get_children()[current_character_index].modulate = Color.SEA_GREEN
+		current_character_container.modulate = Color.SEA_GREEN
 		
 		current_character_index += 1
 		
-		if current_character_index >= Global.texts[current_text_index].length():
+		if current_character_index >= Global.texts[current_text_index]["sentences"][current_sentence_index]["text"].length():
 			current_character_index = 0
-			current_text_index += 1
-			current_text_index = current_text_index % Global.texts.size()
+			current_sentence_index += 1
 			
-			display_text(current_text_index)
+			if current_sentence_index >= Global.texts[current_text_index]["sentences"].size():
+				current_sentence_index = 0
+				current_text_index = (current_text_index + 1) % Global.texts.size()
+			
+			display_text(current_text_index, current_sentence_index)
 
 
 func set_global_pinyin_visibility(_show_pinyin: bool) -> void:

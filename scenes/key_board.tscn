@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cavsq3d367axr" path="res://assets/ch.wav" id="12_1sw3a"]
 [ext_resource type="AudioStream" uid="uid://ckpkm43vdywyj" path="res://assets/z.wav" id="13_e4qp4"]
 [ext_resource type="AudioStream" uid="uid://tud2nea1jdel" path="res://assets/i.wav" id="14_rug83"]
-[ext_resource type="AudioStream" uid="uid://drex6rvhi74kd" path="res://assets/o.wav" id="15_hrevl"]
+[ext_resource type="AudioStream" uid="uid://drex6rvhi74kd" path="res://assets/e.wav" id="15_hrevl"]
 [ext_resource type="AudioStream" uid="uid://d12al5uqgwqu0" path="res://assets/ei.wav" id="16_y2iek"]
 [ext_resource type="AudioStream" uid="uid://cq31oc3u1jdnr" path="res://assets/en.wav" id="17_2kxd6"]
 [ext_resource type="AudioStream" uid="uid://dqvs3i2tyjvwy" path="res://assets/m.wav" id="18_copmv"]
@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://b1pmiber1haxx" path="res://assets/sh.wav" id="22_ted4k"]
 [ext_resource type="AudioStream" uid="uid://cgwfrwohkfw5a" path="res://assets/c.wav" id="23_v2bhh"]
 [ext_resource type="AudioStream" uid="uid://bq7pjgupq7gpm" path="res://assets/u.wav" id="24_vgqlf"]
-[ext_resource type="AudioStream" uid="uid://cxqtljw0mej1v" path="res://assets/e.wav" id="25_7ihlk"]
+[ext_resource type="AudioStream" uid="uid://cxqtljw0mej1v" path="res://assets/o.wav" id="25_7ihlk"]
 [ext_resource type="AudioStream" uid="uid://c3j611t6nimd8" path="res://assets/ao.wav" id="26_s286r"]
 [ext_resource type="AudioStream" uid="uid://cm555ake71efw" path="res://assets/ang.wav" id="27_t8tqm"]
 [ext_resource type="AudioStream" uid="uid://b3g2shc3rqsd4" path="res://assets/f.wav" id="28_dlo43"]
@@ -234,7 +234,7 @@ zhuyin = "ㄛ"
 category = 1
 pinyin = "o"
 key = "I"
-audio_stream = ExtResource("15_hrevl")
+audio_stream = ExtResource("25_7ihlk")
 
 [node name="KeyButton9" parent="VBoxContainer/SecondRow" instance=ExtResource("1_yb8hr")]
 modulate = Color(1, 1, 1, 1)
@@ -336,7 +336,7 @@ zhuyin = "ㄜ"
 category = 1
 pinyin = "e"
 key = "K"
-audio_stream = ExtResource("25_7ihlk")
+audio_stream = ExtResource("15_hrevl")
 
 [node name="KeyButton9" parent="VBoxContainer/ThirdRow" instance=ExtResource("1_yb8hr")]
 modulate = Color(1, 1, 1, 1)

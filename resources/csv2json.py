@@ -21,6 +21,6 @@ def csv_to_json(csv_file_path, json_file_path):
     print(f"Converted {csv_file_path} to {json_file_path} successfully.")
 
 # Example usage
-csv_file_path = 'E:/Projects/注音輸入法練習/resources/character_zhuyin_dictionary.csv'  # Replace with your CSV file path
-json_file_path = 'E:/Projects/注音輸入法練習/resources/character_zhuyin_dictionary.json'   # Replace with your desired JSON file path
+csv_file_path = 'D:/Projects/Godot Projects/zhuyin_input_practice/resources/character_zhuyin_dictionary.csv'  # Replace with your CSV file path
+json_file_path = 'D:/Projects/Godot Projects/zhuyin_input_practice/resources/character_zhuyin_dictionary.json'   # Replace with your desired JSON file path
 csv_to_json(csv_file_path, json_file_path)

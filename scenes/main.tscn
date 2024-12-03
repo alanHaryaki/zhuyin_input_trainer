@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg6f3sqq4b8n0"]
+[gd_scene load_steps=9 format=3 uid="uid://cg6f3sqq4b8n0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ncj2t"]
 [ext_resource type="PackedScene" uid="uid://q2dn2or83qcr" path="res://scenes/key_board.tscn" id="2_gpoor"]
 [ext_resource type="AudioStream" uid="uid://bie70r425yn05" path="res://assets/positive_notification.mp3" id="3_v3l37"]
 [ext_resource type="AudioStream" uid="uid://bwb7tymto8ejf" path="res://assets/neutral_notification.wav" id="4_ishit"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_klgqy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0iady"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_gr0nt"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_a0cys"]
+font_size = 20
 
 [node name="Main" type="Control" node_paths=PackedStringArray("text_container")]
 layout_mode = 3
@@ -19,28 +30,25 @@ text_container = NodePath("TextContainer")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -2.0
-offset_top = 66.0
-offset_right = -2.0
-offset_bottom = 66.0
+offset_top = 280.0
+offset_bottom = 280.0
 grow_horizontal = 2
 theme_override_constants/separation = 25
 alignment = 1
 
 [node name="KeyBoard" parent="." instance=ExtResource("2_gpoor")]
 layout_mode = 1
-offset_top = 230.0
-offset_bottom = 10.0
+offset_top = 588.0
 
 [node name="TipsLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -151.0
-offset_top = 17.0
-offset_right = -15.0
-offset_bottom = 119.0
+offset_left = -178.0
+offset_top = 20.0
+offset_right = -8.0
+offset_bottom = 176.0
 grow_horizontal = 0
 text = "F1：亮色
 F2：暗色
@@ -48,9 +56,41 @@ F3：按類別著色
 F4：顯示/隱藏拼音
 F5：顯示/隱藏鍵碼
 F6：打開/關閉音效"
+label_settings = SubResource("LabelSettings_klgqy")
+vertical_alignment = 1
 
 [node name="PositiveNotification" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_v3l37")
 
 [node name="NeutralNotification" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ishit")
+
+[node name="InfoContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 46.0
+offset_right = 210.0
+offset_bottom = 134.0
+
+[node name="AuthorLabel" type="Label" parent="InfoContainer"]
+layout_mode = 2
+text = "王維
+"
+label_settings = SubResource("LabelSettings_0iady")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="InfoContainer"]
+layout_mode = 2
+text = "《鹿柴》
+"
+label_settings = SubResource("LabelSettings_gr0nt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoteLabel" type="Label" parent="InfoContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_a0cys")
+horizontal_alignment = 1
+vertical_alignment = 1
