@@ -19,6 +19,7 @@ var current_text_index: int = 0
 var current_sentence_index: int = 0
 var current_character_index: int = 0
 
+@onready var key_board: Control = $KeyBoard
 @onready var positive_notification: AudioStreamPlayer = $PositiveNotification
 @onready var neutral_notification: AudioStreamPlayer = $NeutralNotification
 @onready var author_label: Label = $InfoContainer/AuthorLabel
@@ -42,27 +43,31 @@ func _input(event: InputEvent) -> void:
 		var keycode_string: String = OS.get_keycode_string(key_event.keycode)
 
 		if keycode_string == "F1":
-			change_color_mode(Global.ColorMode.BRIGHT)
+			change_color_mode()
 		elif keycode_string == "F2":
-			change_color_mode(Global.ColorMode.DARK)
-		elif keycode_string == "F3":
-			change_color_mode(Global.ColorMode.BY_CATEGORY)
-		elif keycode_string == "F4":
 			show_pinyin = not show_pinyin
-		elif keycode_string == "F5":
+		elif keycode_string == "F3":
 			show_key = not show_key
-		elif keycode_string == "F6":
+		elif keycode_string == "F4":
+			key_board.visible = not key_board.visible
+			if key_board.visible:
+				text_container.position = Vector2(0, 280)
+			else:
+				text_container.position.y = 500
+		elif keycode_string == "F5":
 			sound_effects_enabled = not sound_effects_enabled
-		elif keycode_string == "F7":
+			if not sound_effects_enabled:
+				neutral_notification.play()
+		elif keycode_string == "F6":
 			current_sentence_index = 0
-			current_text_index = randi() % Global.texts.size()
+			current_text_index = (current_text_index + randi_range(1, Global.texts.size())) % Global.texts.size()
 			
 			display_text(current_text_index, current_sentence_index)
-			
 		else:
 			return
 		
-		neutral_notification.play()
+		if sound_effects_enabled:
+			neutral_notification.play()
 
 
 func display_text(text_index: int, sentence_index: int) -> void:
@@ -147,9 +152,9 @@ func set_global_key_visibility(_show_key: bool) ->  void:
 		key_button.show_key = show_key
 
 
-func change_color_mode(_mode: Global.ColorMode) -> void:
+func change_color_mode() -> void:
 	for key_button: KeyButton in get_tree().get_nodes_in_group("key button"):
-		key_button.color_mode = _mode
+		key_button.color_mode = (key_button.color_mode + 1) % 3
 
 
 # No longer in use

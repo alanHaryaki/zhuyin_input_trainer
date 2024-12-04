@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_ncj2t"]
 [ext_resource type="PackedScene" uid="uid://q2dn2or83qcr" path="res://scenes/key_board.tscn" id="2_gpoor"]
-[ext_resource type="AudioStream" uid="uid://bie70r425yn05" path="res://assets/positive_notification.mp3" id="3_v3l37"]
-[ext_resource type="AudioStream" uid="uid://bwb7tymto8ejf" path="res://assets/neutral_notification.wav" id="4_ishit"]
+[ext_resource type="AudioStream" uid="uid://bie70r425yn05" path="res://assets/sounds/positive_notification.mp3" id="3_v3l37"]
+[ext_resource type="AudioStream" uid="uid://bwb7tymto8ejf" path="res://assets/sounds/neutral_notification.wav" id="4_ishit"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_klgqy"]
 
@@ -50,12 +50,12 @@ offset_top = 20.0
 offset_right = -8.0
 offset_bottom = 176.0
 grow_horizontal = 0
-text = "F1：亮色
-F2：暗色
-F3：按類別著色
-F4：顯示/隱藏拼音
-F5：顯示/隱藏鍵碼
-F6：打開/關閉音效"
+text = "F1：更換鍵盤顏色
+F2：顯示/隱藏拼音
+F3：顯示/隱藏鍵碼
+F4：顯示/隱藏鍵盤
+F5：打開/關閉音效
+F6：更換練習文本"
 label_settings = SubResource("LabelSettings_klgqy")
 vertical_alignment = 1
 
@@ -94,3 +94,4 @@ layout_mode = 2
 label_settings = SubResource("LabelSettings_a0cys")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3

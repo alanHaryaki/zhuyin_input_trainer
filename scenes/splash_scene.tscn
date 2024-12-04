@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://2ae4uqsdbc0h"]
+
+[ext_resource type="Script" path="res://scenes/splash_scene.gd" id="1_f2gdk"]
+[ext_resource type="Texture2D" uid="uid://15b8v4vgwr2e" path="res://assets/pictures/icon.png" id="2_ukp0t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rgdqd"]
+font_size = 36
+
+[node name="SplashScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f2gdk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ukp0t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = 276.0
+offset_right = 193.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "by Minimal Farm"
+label_settings = SubResource("LabelSettings_rgdqd")
+horizontal_alignment = 1
